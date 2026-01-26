@@ -1,7 +1,20 @@
 # ObsidianDart
-dead-simple and incredibly lightweight cryptography tool intented for passwords.
 
-Its made for Linux systems and utilizes (usually) pre-packaged encryption tools in your distro. (Namely: OpenSSL) 
-Being operated via the terminal, the program can encrypt and decrypt a file within the local folder(passwords.wf). The user can choose to use tab or comma seperated values and open it within another program to parse said formatting. ObsidianDart is soley a lightweight cryptography tool, intented for senstive, text-based information.
+ObsidianDart is a minimal, command-line cryptography utility intended for the secure local storage of sensitive, text-based information such as passwords or credentials.
 
-ObsidianDart is opensource
+The program is written in C++ for Linux systems and leverages system-provided cryptographic libraries—specifically OpenSSL—to perform AES-256 encryption and decryption. By relying on pre-packaged, well-audited tooling, ObsidianDart avoids unnecessary complexity while maintaining strong cryptographic primitives.
+
+ObsidianDart operates entirely through the terminal and encrypts or decrypts a file located in the working directory (e.g., `passwords.wf`). The file format is user-defined and may use tab- or comma-separated values, allowing the decrypted output to be easily parsed or opened in external applications.
+
+This project is intentionally lightweight and narrowly scoped. It is not a full password manager, but rather a simple local encryption tool designed to minimize attack surface by avoiding cloud services, background daemons, or large software stacks.
+
+ObsidianDart is open source.
+
+## Build Notes
+
+ObsidianDart depends on OpenSSL. On some systems, explicit linking may be required when compiling.
+
+Example:
+
+```bash
+g++ obsidiandart.cpp -o obsidiandart -lssl -lcrypto
