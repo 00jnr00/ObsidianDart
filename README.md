@@ -18,3 +18,34 @@ Example:
 
 ```bash
 g++ obsidiandart.cpp -o obsidiandart -lssl -lcrypto
+```
+
+## Usage
+
+### Compile
+
+```bash
+g++ obsidian.cpp -o obsidiandart -lssl -lcrypto
+```
+
+### Encrypt a file
+
+```bash
+./obsidiandart encrypt passwords.wf
+```
+
+### Decrypt a file
+
+```bash
+./obsidiandart decrypt passwords.wf.enc
+```
+
+### Interactive fallback
+
+If you run the binary without arguments, it will prompt for an action and use the
+default filenames (`passwords.wf` for encryption and `passwords.wf.enc` for
+decryption):
+
+```bash
+./obsidiandart
+```
